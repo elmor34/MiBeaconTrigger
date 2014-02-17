@@ -97,11 +97,11 @@
         [_delegate trueProximityTriggeredForBeacon:closestBeacon];
         latestMinor = [closestBeacon.minor intValue];
         
-        if (loggingEnabled == YES) NSLog(@"///////////////////////// TRIGGERED BEACON WITH MINOR: %d\n\n", [closestBeacon.minor integerValue]);
+        if (loggingEnabled == YES) NSLog(@"///////////////////////// TRIGGERED BEACON WITH MINOR: %ld\n\n", (long)[closestBeacon.minor integerValue]);
     }
     else
     {
-        if (loggingEnabled == YES) NSLog(@"Not triggered!\nClosest Beacon Minor: %d, already triggered:%d (won't trigger if those are the same)\nMaximum proximity enum: %ld actual: %ld (won't trigger if actual > maximum)\nConsistency:%d (if all in order will trigger at > 0)\n\n)", [closestBeacon.minor integerValue], latestMinor, (long)minimumProximity, (long)closestBeacon.proximity, consistency);
+        if (loggingEnabled == YES) NSLog(@"Not triggered!\nClosest Beacon Minor: %ld, already triggered:%d (won't trigger if those are the same)\nMaximum proximity enum: %ld actual: %ld (won't trigger if actual > maximum)\nConsistency:%d (if all in order will trigger at > 0)\n\n)", (long)[closestBeacon.minor integerValue], latestMinor, (long)minimumProximity, (long)closestBeacon.proximity, consistency);
     }
 }
 

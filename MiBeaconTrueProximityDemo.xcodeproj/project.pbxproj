@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E03AC8C418B262BA00F84BFF /* MiBeaconTrueProximityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiBeaconTrueProximityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03AC8C418B262BA00F84BFF /* MiBeaconTrueProximityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MiBeaconTrueProximityDemo.app; path = "/Users/mathijsvreeman/Google Drive/iOS Apps/MiBeaconTrueProximityDemo/build/Debug-iphoneos/MiBeaconTrueProximityDemo.app"; sourceTree = "<absolute>"; };
 		E03AC8C718B262BA00F84BFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E03AC8C918B262BA00F84BFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E03AC8CB18B262BA00F84BFF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -49,7 +49,7 @@
 		E03AC8DC18B262BA00F84BFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E03AC8DD18B262BA00F84BFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E03AC8DF18B262BA00F84BFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E03AC8E518B262BA00F84BFF /* MiBeaconTrueProximityDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiBeaconTrueProximityDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03AC8E518B262BA00F84BFF /* MiBeaconTrueProximityDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MiBeaconTrueProximityDemoTests.xctest; path = "/Users/mathijsvreeman/Google Drive/iOS Apps/MiBeaconTrueProximityDemo/build/Debug-iphoneos/MiBeaconTrueProximityDemoTests.xctest"; sourceTree = "<absolute>"; };
 		E03AC8E618B262BA00F84BFF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E03AC8EE18B262BA00F84BFF /* MiBeaconTrueProximityDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiBeaconTrueProximityDemoTests-Info.plist"; sourceTree = "<group>"; };
 		E03AC8F018B262BA00F84BFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -88,17 +88,7 @@
 				E03AC8CD18B262BA00F84BFF /* MiBeaconTrueProximityDemo */,
 				E03AC8EC18B262BA00F84BFF /* MiBeaconTrueProximityDemoTests */,
 				E03AC8C618B262BA00F84BFF /* Frameworks */,
-				E03AC8C518B262BA00F84BFF /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		E03AC8C518B262BA00F84BFF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E03AC8C418B262BA00F84BFF /* MiBeaconTrueProximityDemo.app */,
-				E03AC8E518B262BA00F84BFF /* MiBeaconTrueProximityDemoTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E03AC8C618B262BA00F84BFF /* Frameworks */ = {
@@ -218,7 +208,7 @@
 				Base,
 			);
 			mainGroup = E03AC8BB18B262BA00F84BFF;
-			productRefGroup = E03AC8C518B262BA00F84BFF /* Products */;
+			productRefGroup = E03AC8BB18B262BA00F84BFF;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

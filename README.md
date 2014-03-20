@@ -25,7 +25,6 @@ This class filters out beacons with proximity unknown, and also beacons with a b
 
 The class uses a delegate. Please refer to the sample project.
 
-    - (void)proximityTriggeredForBeacon:(CLBeacon *)beacon {
-    
+    - (void)proximityTriggeredForBeacon:(CLBeacon *)beacon withMinor:(NSInteger)minor {
         // actions for specific beacons here
     }

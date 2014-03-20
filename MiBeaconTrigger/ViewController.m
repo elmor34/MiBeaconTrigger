@@ -45,7 +45,8 @@
     NSInteger major = 1;
     NSArray *minors = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:3],nil];
     CLProximity minimumProximity = CLProximityNear; // CLProximityFar, CLProximityNear or CLProximityImmediate
-    [proximityTrigger startTriggeringForBeaconsWithUUID:uuid major:major minors:minors minimumProximity:minimumProximity logging:NO];
+    BOOL logging = NO;
+    [proximityTrigger startTriggeringForBeaconsWithUUID:uuid major:major minors:minors minimumProximity:minimumProximity logging:logging];
 }
 
 - (void)didReceiveMemoryWarning

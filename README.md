@@ -1,7 +1,7 @@
 MiBeaconTrigger
 =========================
 
-This class enables you to very easily integrate iBeacons in your projects. Specify UUID, Major, an array of Minors, desired proximity and the delegate will start reporting when an ibeacon with the desired specifications is "triggered".
+This class enables you to very easily integrate iBeacons in your projects. Specify UUID, Major, an array of Minors, desired proximity and the delegate will start reporting when an ibeacon with the desired specifications is "triggered". You can enable logging if you want to see what's going on under the hood.
 
 Start triggering:
 
@@ -29,5 +29,3 @@ The class uses a delegate. Please refer to the sample project. Don't forget to a
     
         // actions for specific beacons here
     }
-    
-You can enable logging if you want to see what's going on.

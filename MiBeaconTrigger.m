@@ -77,7 +77,7 @@
         [beaconsCopy removeObject:beaconToRemove];
     }
     
-    if (([beaconsToRemove count] > 0) && (loggingEnabled == YES)) NSLog(@"removing beacons:%@", beaconsToRemove);
+    if (([beaconsToRemove count] > 0) && (loggingEnabled == YES)) NSLog(@"removing %lu beacons", (unsigned long)[beaconsToRemove count]);
     
     // array might be unsorted now > make beacon with best RSSI closestBeacon
     NSInteger bestRSSI = 999;
@@ -110,7 +110,7 @@
         [_delegate proximityTriggeredForBeacon:closestBeacon withMinor:[[closestBeacon minor] integerValue]];
         latestMinor = [closestBeacon.minor intValue];
         
-        if (loggingEnabled == YES) NSLog(@"///////////////////////// TRIGGERED BEACON WITH MINOR: %ld\n\n", (long)[closestBeacon.minor integerValue]);
+        if (loggingEnabled == YES) NSLog(@"Trigger iBeacon with minor: %ld", (long)[closestBeacon.minor integerValue]);
     }
     else
     {

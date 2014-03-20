@@ -29,7 +29,7 @@
 @interface ViewController : UIViewController <iBeaconTriggerDelegate>
 {
     IBOutlet UILabel *beaconLabel;
-    MiBeaconTrigger *proximityTrigger;
+    MiBeaconTrigger *iBeaconTrigger;
 }
 
 @end

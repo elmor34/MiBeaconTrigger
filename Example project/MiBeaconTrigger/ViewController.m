@@ -37,8 +37,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // configure proximity trigger and start trigger delegate method
-    proximityTrigger = [[MiBeaconTrigger alloc] init];
-    [proximityTrigger setDelegate:self];
+    iBeaconTrigger = [[MiBeaconTrigger alloc] init];
+    [iBeaconTrigger setDelegate:self];
     
     //NSString *uuid = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"; // standard estimote
     NSString *uuid = @"44E061B1-47E5-4EBC-88DF-3CD10BF97A61";
@@ -46,7 +46,7 @@
     NSArray *minors = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:3],nil];
     CLProximity minimumProximity = CLProximityNear; // CLProximityFar, CLProximityNear or CLProximityImmediate
     BOOL logging = NO;
-    [proximityTrigger startTriggeringForBeaconsWithUUID:uuid major:major minors:minors minimumProximity:minimumProximity logging:logging];
+    [iBeaconTrigger startTriggeringForBeaconsWithUUID:uuid major:major minors:minors minimumProximity:minimumProximity logging:logging];
 }
 
 - (void)didReceiveMemoryWarning

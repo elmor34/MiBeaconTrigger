@@ -6,7 +6,7 @@ This class enables you to very easily integrate iBeacons in your projects. Speci
 Start triggering:
 
         // configure proximity trigger and start trigger delegate method
-        proximityTrigger = [[MiBeaconTrigger alloc] init];
+        MiBeaconTrigger *proximityTrigger = [[MiBeaconTrigger alloc] init];
         [proximityTrigger setDelegate:self];
         
         NSString *uuid = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"; // standard estimote

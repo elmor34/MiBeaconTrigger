@@ -55,9 +55,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)proximityTriggeredForBeacon:(CLBeacon *)beacon {
+- (void)proximityTriggeredForBeacon:(CLBeacon *)beacon withMinor:(NSInteger)minor {
     // trigger specific action for beacon here
-    [beaconLabel setText:[NSString stringWithFormat:@"minor: %d", [beacon.minor intValue]]];
+    [beaconLabel setText:[NSString stringWithFormat:@"minor: %ld", (long)minor]];
 }
 
 @end

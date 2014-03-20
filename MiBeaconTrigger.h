@@ -27,7 +27,7 @@
 @import CoreLocation;
 
 @protocol iBeaconTriggerDelegate
-    - (void)proximityTriggeredForBeacon:(CLBeacon *)beacon;
+- (void)proximityTriggeredForBeacon:(CLBeacon *)beacon withMinor:(NSInteger)minor;
 @end
 
 @interface MiBeaconTrigger : NSObject <CLLocationManagerDelegate>

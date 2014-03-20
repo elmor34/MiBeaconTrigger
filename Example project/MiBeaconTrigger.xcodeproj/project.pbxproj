@@ -46,8 +46,8 @@
 		E03AC8DC18B262BA00F84BFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = MiBeaconTrigger/ViewController.h; sourceTree = "<group>"; };
 		E03AC8DD18B262BA00F84BFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = MiBeaconTrigger/ViewController.m; sourceTree = "<group>"; };
 		E03AC8E618B262BA00F84BFF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E03AC8FC18B262F700F84BFF /* MiBeaconTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiBeaconTrigger.h; path = MiBeaconTrigger/MiBeaconTrigger.h; sourceTree = "<group>"; };
-		E03AC8FD18B262F700F84BFF /* MiBeaconTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiBeaconTrigger.m; path = MiBeaconTrigger/MiBeaconTrigger.m; sourceTree = "<group>"; };
+		E03AC8FC18B262F700F84BFF /* MiBeaconTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiBeaconTrigger.h; path = ../MiBeaconTrigger.h; sourceTree = "<group>"; };
+		E03AC8FD18B262F700F84BFF /* MiBeaconTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiBeaconTrigger.m; path = ../MiBeaconTrigger.m; sourceTree = "<group>"; };
 		E0D85C3B18DADEA900B72EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MiBeaconTrigger/Base.lproj/iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		E0D85C3D18DAE19400B72EFC /* MiBeaconTrigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiBeaconTrigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D85C3E18DAE1A200B72EFC /* MiBeaconTriggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiBeaconTriggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };

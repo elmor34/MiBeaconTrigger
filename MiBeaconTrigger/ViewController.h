@@ -24,12 +24,12 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "MiBeaconTrueProximityTrigger.h"
+#import "MiBeaconTrigger.h"
 
 @interface ViewController : UIViewController <TrueProximityTriggerDelegate>
 {
     IBOutlet UILabel *beaconLabel;
-    MiBeaconTrueProximityTrigger *proximityTrigger;
+    MiBeaconTrigger *proximityTrigger;
 }
 
 @end

@@ -27,26 +27,26 @@
 @import CoreLocation;
 
 @protocol TrueProximityTriggerDelegate
-    - (void)trueProximityTriggeredForBeacon:(CLBeacon *)beacon;
+    - (void)proximityTriggeredForBeacon:(CLBeacon *)beacon;
 @end
 
-@interface MiBeaconTrueProximityTrigger : NSObject <CLLocationManagerDelegate>
+@interface MiBeaconTrigger : NSObject <CLLocationManagerDelegate>
 {
     CLBeaconRegion *beaconRegion;
     CLLocationManager *locationManager;
-    
     CLProximity minimumProximity;
     BOOL loggingEnabled;
+    NSInteger monitorMajor;
+    NSArray *monitorMinors;
     
-    int consistency;
-    int consistencyBeaconMinor;
-    
-    int latestMinor;
+    NSInteger consistency;
+    NSInteger consistencyBeaconMinor;
+    NSInteger latestMinor;
 }
 
 @property (strong, nonatomic) id<TrueProximityTriggerDelegate> delegate;
 
-- (void)startTriggeringTrueProximityChangesForBeaconsWithUUID:(NSUUID *)uuid minimumProximity:(CLProximity)proximity logging:(BOOL)logging;
+- (void)startTriggeringForBeaconsWithUUID:(NSString *)uuid major:(NSInteger)major minors:(NSArray *)minors minimumProximity:(CLProximity)proximity logging:(BOOL)logging;
 - (void)stopTriggering;
 
 @end

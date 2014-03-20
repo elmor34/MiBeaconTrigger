@@ -23,22 +23,35 @@
  OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#import "MiBeaconTrueProximityTrigger.h"
+#import "MiBeaconTrigger.h"
 
-@implementation MiBeaconTrueProximityTrigger
+@implementation MiBeaconTrigger
 
-- (void)startTriggeringTrueProximityChangesForBeaconsWithUUID:(NSUUID *)uuid minimumProximity:(CLProximity)proximity logging:(BOOL)logging {
+- (void)startTriggeringForBeaconsWithUUID:(NSString *)uuidString major:(NSInteger)major minors:(NSArray *)minors minimumProximity:(CLProximity)proximity logging:(BOOL)logging {
     latestMinor = -1;
+    
+    monitorMajor = major;
+    monitorMinors = minors;
+    minimumProximity = proximity;
+    loggingEnabled = logging;
+    if (!loggingEnabled) loggingEnabled = NO;
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
     
     // Mutable copy to work with
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     
-    beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"not.so.important"];
-    [locationManager startRangingBeaconsInRegion:beaconRegion];
+    for (NSNumber *num in minors) {
+        if ([num intValue] > 65536) NSLog(@"Warning: found invalid minor value: %d", [num intValue]);
+    }
     
-    minimumProximity = proximity;
-    loggingEnabled = logging;
+    if (([uuidString length] == 36) && ([[uuidString componentsSeparatedByString:@"-"] count] == 5) && (minors.count > 0) && (major <= 65536) && (proximity && proximity != CLProximityUnknown)) {
+        beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"not.so.important"];
+        [locationManager startRangingBeaconsInRegion:beaconRegion];
+    }
+    else {
+        NSLog(@"\nInput error. Is the UUID invalid, is the major identifier > 65536, is the number of minors 0, or is the Proximity set to CLProximityUnknown (0)?\n\nUUID: %@\nMajor: %ld\nNumber of minors: %lu\nProximity: %ld", uuidString, (long)major, (unsigned long)[minors count], proximity);
+    }
 }
 
 - (void)stopTriggering {
@@ -92,16 +105,16 @@
     }
     
     // trigger delegate?
-    if ((closestBeacon.proximity > 0) && (closestBeacon.proximity <= minimumProximity) && (consistency > 0) && (([closestBeacon.minor intValue] != latestMinor) || (latestMinor < 0)))
+    if ((closestBeacon.proximity > 0) && (closestBeacon.proximity <= minimumProximity) && (consistency > 0) && (([closestBeacon.minor intValue] != latestMinor) || (latestMinor < 0)) && ([monitorMinors containsObject:closestBeacon.minor]))
     {
-        [_delegate trueProximityTriggeredForBeacon:closestBeacon];
+        [_delegate proximityTriggeredForBeacon:closestBeacon];
         latestMinor = [closestBeacon.minor intValue];
         
         if (loggingEnabled == YES) NSLog(@"///////////////////////// TRIGGERED BEACON WITH MINOR: %ld\n\n", (long)[closestBeacon.minor integerValue]);
     }
     else
     {
-        if (loggingEnabled == YES) NSLog(@"Not triggered!\nClosest Beacon Minor: %ld, already triggered:%d (won't trigger if those are the same)\nMaximum proximity enum: %ld actual: %ld (won't trigger if actual > maximum)\nConsistency:%d (if all in order will trigger at > 0)\n\n)", (long)[closestBeacon.minor integerValue], latestMinor, (long)minimumProximity, (long)closestBeacon.proximity, consistency);
+        if (loggingEnabled == YES) NSLog(@"Not triggered!\nClosest Beacon Minor: %ld, already triggered:%ld (won't trigger if those are the same)\nMaximum proximity enum: %ld actual: %ld (won't trigger if actual > maximum)\nConsistency:%ld (if all in order will trigger at > 0)\n\n)", (long)[closestBeacon.minor integerValue], (long)latestMinor, (long)minimumProximity, (long)closestBeacon.proximity, (long)consistency);
     }
 }
 

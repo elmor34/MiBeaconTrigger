@@ -26,7 +26,7 @@
 #import <Foundation/Foundation.h>
 @import CoreLocation;
 
-@protocol TrueProximityTriggerDelegate
+@protocol iBeaconTriggerDelegate
     - (void)proximityTriggeredForBeacon:(CLBeacon *)beacon;
 @end
 
@@ -44,7 +44,7 @@
     NSInteger latestMinor;
 }
 
-@property (strong, nonatomic) id<TrueProximityTriggerDelegate> delegate;
+@property (strong, nonatomic) id<iBeaconTriggerDelegate> delegate;
 
 - (void)startTriggeringForBeaconsWithUUID:(NSString *)uuid major:(NSInteger)major minors:(NSArray *)minors minimumProximity:(CLProximity)proximity logging:(BOOL)logging;
 - (void)stopTriggering;
